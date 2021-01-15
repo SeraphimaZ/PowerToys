@@ -17,6 +17,15 @@ namespace FancyZonesEditor.Models
 
         public Rect CanvasRect { get; private set; }
 
+        public bool IsEnabledForMonitor
+        {
+            get
+            {
+                // CanvasRect is uninitialized for templates
+                return (CanvasRect.Width == App.Overlay.WorkArea.Width && CanvasRect.Height == App.Overlay.WorkArea.Height) || CanvasRect.Width == 0;
+            }
+        }
+
         public CanvasLayoutModel(string uuid, string name, LayoutType type, IList<Int32Rect> zones, int width, int height)
             : base(uuid, name, type)
         {

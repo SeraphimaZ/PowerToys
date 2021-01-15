@@ -88,7 +88,8 @@
             <Grid Background="Transparent"
                   KeyDown="LayoutItem_KeyDown"
                   MouseDown="LayoutItem_Click"
-                  Margin="0,0,0,12">
+                  Margin="0,0,0,12"
+                  IsEnabled="{Binding IsEnabledForMonitor}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="24" />
@@ -292,6 +293,10 @@
                     <Setter TargetName="LayoutItem"
                             Property="BorderBrush"
                             Value="{DynamicResource LayoutItemBorderPointerOverBrush}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsEnabledForMonitor}"
+                             Value="false">
+                    <Setter Property="Opacity" Value="0.5"/>
                 </DataTrigger>
             </DataTemplate.Triggers>
         </DataTemplate>
