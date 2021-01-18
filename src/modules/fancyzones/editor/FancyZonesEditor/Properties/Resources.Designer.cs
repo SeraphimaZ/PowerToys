@@ -223,6 +223,15 @@ namespace FancyZonesEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This layout could be used with a different monitor resolution..
+        /// </summary>
+        public static string DifferentResolutionCustomLayout {
+            get {
+                return ResourceManager.GetString("DifferentResolutionCustomLayout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Distance to highlight adjacent zones.
         /// </summary>
         public static string Distance_adjacent_zones {

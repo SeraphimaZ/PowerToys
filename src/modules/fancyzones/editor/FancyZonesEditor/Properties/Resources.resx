@@ -316,4 +316,7 @@ To merge zones, select the zones and click "merge".</value>
   <data name="Error_Parsing_Zones_Settings_User_Choice" xml:space="preserve">
     <value>Would you like to continue? Malformed data will be lost.</value>
   </data>
+  <data name="DifferentResolutionCustomLayout" xml:space="preserve">
+    <value>This layout could be used with a different monitor resolution.</value>
+  </data>
 </root>

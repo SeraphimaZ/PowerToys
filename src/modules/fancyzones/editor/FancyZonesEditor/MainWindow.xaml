@@ -89,11 +89,18 @@
                   KeyDown="LayoutItem_KeyDown"
                   MouseDown="LayoutItem_Click"
                   Margin="0,0,0,12"
-                  IsEnabled="{Binding IsEnabledForMonitor}">
+                  IsEnabled="{Binding IsEnabledForMonitor}"
+                  ToolTipService.ShowOnDisabled="True">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="24" />
                 </Grid.RowDefinitions>
+
+                <Grid.ToolTip>
+                    <ToolTip HasDropShadow="True" Placement="Relative" x:Name="CanvasLayoutToolTip">
+                        <TextBlock Text="{x:Static props:Resources.DifferentResolutionCustomLayout}"/>
+                    </ToolTip>
+                </Grid.ToolTip>
 
                 <Border x:Name="LayoutItem"
                         Background="{DynamicResource LayoutItemBackgroundBrush}"
@@ -177,7 +184,7 @@
                                          Margin="0,6,0,16"
                                          AutomationProperties.LabeledBy="{Binding ElementName=nameHeader}"
                                          Visibility="{Binding Type, Converter={StaticResource LayoutTypeCustomToVisibilityConverter}}"/>
-                                
+
                                 <StackPanel Margin="0,0,0,0"
                                             Orientation="Vertical">
                                     <StackPanel Margin="0,0,0,8"
@@ -225,7 +232,7 @@
                                                 AutomationProperties.Name="{x:Static props:Resources.Zone_Count_Increment}"
                                                 Click="IncrementZones_Click" />
                                     </StackPanel>
-                                    
+
                                     <TextBlock Text="{x:Static props:Resources.Distance_adjacent_zones}"
                                                Margin="0,16,0,0"
                                                Foreground="{DynamicResource PrimaryForegroundBrush}"
@@ -297,6 +304,10 @@
                 <DataTrigger Binding="{Binding IsEnabledForMonitor}"
                              Value="false">
                     <Setter Property="Opacity" Value="0.5"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsEnabledForMonitor}"
+                             Value="true">
+                    <Setter TargetName="CanvasLayoutToolTip" Property="Visibility" Value="Collapsed" />
                 </DataTrigger>
             </DataTemplate.Triggers>
         </DataTemplate>
