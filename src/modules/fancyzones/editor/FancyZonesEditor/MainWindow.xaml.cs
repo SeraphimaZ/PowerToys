@@ -299,7 +299,7 @@ namespace FancyZonesEditor
             }
             else
             {
-                selectedLayoutModel = new CanvasLayoutModel(LayoutNameText.Text, LayoutType.Blank);
+                selectedLayoutModel = new CanvasLayoutModel(LayoutNameText.Text, LayoutType.Blank, (int)App.Overlay.WorkArea.Width, (int)App.Overlay.WorkArea.Height);
             }
 
             App.Overlay.CurrentDataContext = selectedLayoutModel;

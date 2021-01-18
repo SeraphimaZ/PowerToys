@@ -33,9 +33,10 @@ namespace FancyZonesEditor.Models
             CanvasRect = new Rect(new Size(width, height));
         }
 
-        public CanvasLayoutModel(string name, LayoutType type)
+        public CanvasLayoutModel(string name, LayoutType type, int width, int height)
         : base(name, type)
         {
+            CanvasRect = new Rect(new Size(width, height));
         }
 
         public CanvasLayoutModel(string name)
@@ -101,6 +102,7 @@ namespace FancyZonesEditor.Models
                 layout.Zones.Add(zone);
             }
 
+            layout.CanvasRect = new Rect(CanvasRect.X, CanvasRect.Y, CanvasRect.Width, CanvasRect.Height);
             layout.SensitivityRadius = SensitivityRadius;
             return layout;
         }

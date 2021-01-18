@@ -64,7 +64,7 @@ namespace FancyZonesEditor
         {
             // Initialize the five default layout models: Focus, Columns, Rows, Grid, and PriorityGrid
             DefaultModels = new List<LayoutModel>(5);
-            _focusModel = new CanvasLayoutModel(Properties.Resources.Template_Layout_Focus, LayoutType.Focus);
+            _focusModel = new CanvasLayoutModel(Properties.Resources.Template_Layout_Focus, LayoutType.Focus, 0, 0);
             _focusModel.InitTemplateZones();
             DefaultModels.Add(_focusModel);
 
@@ -153,7 +153,7 @@ namespace FancyZonesEditor
             }
         }
 
-        private static CanvasLayoutModel _blankModel = new CanvasLayoutModel(string.Empty, LayoutType.Blank);
+        private static CanvasLayoutModel _blankModel = new CanvasLayoutModel(string.Empty, LayoutType.Blank, 0, 0);
 
         public static bool IsPredefinedLayout(LayoutModel model)
         {
