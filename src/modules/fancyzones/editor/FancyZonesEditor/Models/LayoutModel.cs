@@ -170,7 +170,7 @@ namespace FancyZonesEditor.Models
         public event PropertyChangedEventHandler PropertyChanged;
 
         // FirePropertyChanged -- wrapper that calls INPC.PropertyChanged
-        protected virtual void FirePropertyChanged([CallerMemberName] string propertyName = null)
+        public virtual void FirePropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

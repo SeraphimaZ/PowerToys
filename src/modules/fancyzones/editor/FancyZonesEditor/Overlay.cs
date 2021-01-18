@@ -6,9 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 using FancyZonesEditor.Models;
-using Windows.UI.Xaml.Media;
 
 namespace FancyZonesEditor
 {
@@ -108,6 +106,7 @@ namespace FancyZonesEditor
                     {
                         settings.ResetAppliedModel();
                         settings.UpdateDefaultModels();
+                        settings.UpdateCustomModels(); // in case if some canvas layout doesn't fit current resolution
                     }
 
                     Update();

@@ -273,6 +273,17 @@ namespace FancyZonesEditor
             }
         }
 
+        public void UpdateCustomModels()
+        {
+            foreach (LayoutModel model in CustomModels)
+            {
+                if (model is CanvasLayoutModel canvas)
+                {
+                    canvas.FirePropertyChanged(nameof(CanvasLayoutModel.IsEnabledForMonitor));
+                }
+            }
+        }
+
         // implementation of INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
 
