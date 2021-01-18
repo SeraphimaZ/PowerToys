@@ -21,8 +21,7 @@ namespace FancyZonesEditor.Models
         {
             get
             {
-                // CanvasRect is uninitialized for templates
-                return (CanvasRect.Width == App.Overlay.WorkArea.Width && CanvasRect.Height == App.Overlay.WorkArea.Height) || CanvasRect.Width == 0;
+                return (CanvasRect.Width == App.Overlay.WorkArea.Width && CanvasRect.Height == App.Overlay.WorkArea.Height) || Type == LayoutType.Focus;
             }
         }
 
